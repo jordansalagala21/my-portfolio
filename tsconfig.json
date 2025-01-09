@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                          // Modern JavaScript target
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],   // Include DOM types
+    "allowJs": false,                           // Do not allow JavaScript files
+    "skipLibCheck": true,                       // Skip type checking for libraries
+    "strict": true,                             // Enable strict type checking
+    "forceConsistentCasingInFileNames": true,   // Enforce consistent casing in file names
+    "noEmit": true,                             // Do not emit output files
+    "esModuleInterop": true,                    // Enable interoperability between ES and CommonJS modules
+    "moduleResolution": "Node",                // Resolve modules like Node.js
+    "resolveJsonModule": true,                  // Allow importing `.json` files
+    "isolatedModules": true,                    // Ensure each file can be safely transpiled without relying on other files
+    "jsx": "react-jsx",                         // Use the new JSX transform
+    "module": "ESNext",                         // Use ES modules
+    "baseUrl": ".",                             // Base directory for module resolution
+    "paths": {
+      "@components/*": ["src/components/*"],    // Alias for components
+      "@pages/*": ["src/pages/*"],              // Alias for pages
+      "@theme/*": ["src/theme/*"]               // Alias for the theme folder
+    }
+  },
+  "include": ["src"],                           // Include files in the `src` directory
+  "exclude": ["node_modules"]                   // Exclude `node_modules` folder
+}
