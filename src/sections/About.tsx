@@ -41,7 +41,7 @@ const About: React.FC = () => {
           >
             <Avatar
               alt="Jordan"
-              src="/src/assets/Jordan.jpeg" // Replace with your image path
+              src="./assets/Jordan.jpeg" // Replace with your image path
               sx={{
                 width: 200,
                 height: 200,

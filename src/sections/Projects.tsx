@@ -19,10 +19,10 @@ const projects = [
     description:
       "The Hostel Management System is a Django web app for efficient hostel management. It handles hostel/room/bed registration, student admission, bed allocation, occupancy tracking, and provides insightful analytics.",
     technologies: [
-      { name: "Django", logo: "/src/assets/django.svg" },
-      { name: "Python", logo: "/src/assets/python.svg" },
-      { name: "html", logo: "/src/assets/html.jpg" },
-      { name: "javascript", logo: "/src/assets/js.png" },
+      { name: "Django", logo: "./assets/django.svg" },
+      { name: "Python", logo: "./assets/python.svg" },
+      { name: "html", logo: "./assets/html.jpg" },
+      { name: "javascript", logo: "./assets/js.png" },
     ],
     github: "https://github.com/jordansalagala21/Hostel-Management-System",
   },
@@ -31,10 +31,10 @@ const projects = [
     description:
       "This Django web app facilitates event management, including user registration, event creation, ticket booking, vendor management, and volunteer registration. It features authentication, data visualization, and SMS notifications for ticket confirmation",
     technologies: [
-      { name: "Django", logo: "/src/assets/django.svg" },
-      { name: "Python", logo: "/src/assets/python.svg" },
-      { name: "html", logo: "/src/assets/html.jpg" },
-      { name: "javascript", logo: "/src/assets/js.png" },
+      { name: "Django", logo: "/.assets/django.svg" },
+      { name: "Python", logo: "./assets/python.svg" },
+      { name: "html", logo: "./assets/html.jpg" },
+      { name: "javascript", logo: "./assets/js.png" },
     ],
     github: "https://github.com/jordansalagala21/EventManagementSystem",
   },
@@ -61,22 +61,22 @@ const skills = [
   {
     name: "Java",
     proficiency: 90,
-    logo: "/src/assets/java.svg", // Replace with your image paths
+    logo: "./assets/java.svg", // Replace with your image paths
   },
   {
     name: "React",
     proficiency: 85,
-    logo: "/src/assets/react.svg",
+    logo: "./assets/react.svg",
   },
   {
     name: "Python",
     proficiency: 75,
-    logo: "/src/assets/python.svg",
+    logo: "./assets/python.svg",
   },
   {
     name: "Django",
     proficiency: 75,
-    logo: "/src/assets/django.svg",
+    logo: "./assets/django.svg",
   },
 ];
 
