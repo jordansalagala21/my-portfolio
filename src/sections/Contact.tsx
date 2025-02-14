@@ -6,12 +6,16 @@ import {
   Button,
   Grid,
   IconButton,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Email, LinkedIn, GitHub, Phone, Instagram } from "@mui/icons-material";
 import { Typewriter } from "react-simple-typewriter";
 
 const Contact: React.FC = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,12 +90,16 @@ const Contact: React.FC = () => {
             letterSpacing: "2px", // Optional: Add some spacing for style
           }}
         >
-          <Typewriter
-            words={["Get in touch 🤙"]}
-            loop={false}
-            cursor
-            cursorStyle="_"
-          />
+          {isSmallScreen ? (
+            "Get in Touch🤙"
+          ) : (
+            <Typewriter
+              words={["Get in Touch🤙"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+            />
+          )}
         </Typography>
         <Typography
           variant="body1"

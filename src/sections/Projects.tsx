@@ -9,6 +9,8 @@ import {
   CardContent,
   Button,
   LinearProgress,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
@@ -37,6 +39,19 @@ const projects = [
       { name: "javascript", logo: "/assets/js.png" },
     ],
     github: "https://github.com/jordansalagala21/EventManagementSystem",
+  },
+  {
+    title: "GymTribe",
+    description:
+      "GymTribe is a social fitness web app designed to help users find and connect with like-minded gym-goers based on their workout preferences.",
+    technologies: [
+      { name: "react", logo: "/assets/react.svg" },
+      { name: "materialui", logo: "/assets/materialui.png" },
+      { name: "vite", logo: "/assets/vite.jpeg" },
+      { name: "firebase", logo: "/assets/firebase.png" },
+    ],
+    github: "https://github.com/jordansalagala21/EventManagementSystem",
+    live: "https://gym-tribe-kappa.vercel.app",
   },
 ];
 
@@ -81,6 +96,8 @@ const skills = [
 ];
 
 const ProjectsCertifications: React.FC = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -114,12 +131,16 @@ const ProjectsCertifications: React.FC = () => {
             letterSpacing: "2px", // Optional: Add some spacing for style
           }}
         >
-          <Typewriter
-            words={["My Work 🗂️"]}
-            loop={false}
-            cursor
-            cursorStyle="_"
-          />
+          {isSmallScreen ? (
+            "My Work 🗂️!"
+          ) : (
+            <Typewriter
+              words={["My Work 🗂️!"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+            />
+          )}
         </Typography>
       </motion.div>
 
@@ -246,6 +267,7 @@ const ProjectsCertifications: React.FC = () => {
                           justifyContent: "center",
                         }}
                       >
+                        {/* GitHub Button */}
                         <Button
                           href={project.github}
                           target="_blank"
@@ -262,6 +284,25 @@ const ProjectsCertifications: React.FC = () => {
                         >
                           GitHub
                         </Button>
+
+                        {/* Conditionally Render Live Project Button */}
+                        {project.live && (
+                          <Button
+                            href={project.live}
+                            target="_blank"
+                            variant="contained"
+                            size="small"
+                            sx={{
+                              backgroundColor: "#ff6a95",
+                              color: "#fff",
+                              "&:hover": {
+                                backgroundColor: "#ff8bad",
+                              },
+                            }}
+                          >
+                            View Live
+                          </Button>
+                        )}
                       </Box>
                     </CardContent>
                   </Card>

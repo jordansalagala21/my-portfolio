@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Grid, Avatar } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Avatar,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -17,6 +24,8 @@ const educationTimeline = [
 ];
 
 const About: React.FC = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       id="about"
@@ -69,12 +78,16 @@ const About: React.FC = () => {
                 letterSpacing: "2px", // Optional: Add some spacing for style
               }}
             >
-              <Typewriter
-                words={["About Me 🥝"]}
-                loop={false}
-                cursor
-                cursorStyle="_"
-              />
+              {isSmallScreen ? (
+                "About Me👋"
+              ) : (
+                <Typewriter
+                  words={["About Me👋"]}
+                  loop={false}
+                  cursor
+                  cursorStyle="_"
+                />
+              )}
             </Typography>
             <Typography
               variant="body1"
@@ -112,12 +125,16 @@ const About: React.FC = () => {
               letterSpacing: "2px", // Optional: Add some spacing for style
             }}
           >
-            <Typewriter
-              words={["My Education Journey⏳"]}
-              loop={false}
-              cursor
-              cursorStyle="_"
-            />
+            {isSmallScreen ? (
+              "My Education🎓"
+            ) : (
+              <Typewriter
+                words={["My Education🎓"]}
+                loop={false}
+                cursor
+                cursorStyle="_"
+              />
+            )}
           </Typography>
         </motion.div>
 

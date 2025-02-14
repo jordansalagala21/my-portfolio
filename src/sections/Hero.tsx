@@ -1,10 +1,19 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import FloatingIcons from "../components/FloatingIcons";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero: React.FC = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Breakpoint for small screens
+
   return (
     <Box
       className="hero-background"
@@ -30,21 +39,25 @@ const Hero: React.FC = () => {
         fontWeight="bold"
         sx={{
           mb: 2,
-          fontFamily: "'Jersey 15', sans-serif", // Apply Jersey 15 font
-          letterSpacing: "2px", // Optional: Add some spacing for style
+          fontFamily: "'Jersey 15', sans-serif",
+          letterSpacing: "2px",
         }}
       >
-        <Typewriter
-          words={[
-            "Hi, I'm Jordan!",
-            "Welcome to My Portfolio!",
-            "Why was the computer cold 🥶?",
-            "Because it left its Windows open! 😄",
-          ]}
-          loop={false}
-          cursor
-          cursorStyle="_"
-        />
+        {isSmallScreen ? (
+          "Hi, I'm Jordan!"
+        ) : (
+          <Typewriter
+            words={[
+              "Hi, I'm Jordan!",
+              "Welcome to My Portfolio!",
+              "Why was the computer cold 🥶?",
+              "Because it left its Windows open! 😄",
+            ]}
+            loop={false}
+            cursor
+            cursorStyle="_"
+          />
+        )}
       </Typography>
 
       {/* Animated Subheading */}
